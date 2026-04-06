@@ -5,9 +5,7 @@
 This study investigates the volatility dynamics and downside risk of a semiconductor equity portfolio using a GARCH-based Value-at-Risk (VaR) framework. Financial return series are known to exhibit volatility clustering, persistence, and heavy tails, which violate classical assumptions of constant variance. To address this, a GARCH(1,1) model is employed to estimate time-varying conditional volatility and derive parametric VaR estimates. Empirical results show strong volatility persistence and time-varying risk, with estimated 95% VaR indicating approximately a 3% potential loss on extreme trading days.
 
 
-## 1. Introduction
-
-Accurate measurement of financial risk is central to portfolio management, trading, and regulatory compliance. Traditional models assuming constant variance fail to capture the empirical characteristics of financial returns, particularly volatility clustering and persistence.
+## Introduction
 
 This project applies a GARCH-based modelling framework to estimate conditional volatility and Value-at-Risk (VaR) for a semiconductor portfolio. The objective is to assess how risk evolves over time and evaluate the adequacy of volatility modelling in capturing market dynamics.
 
