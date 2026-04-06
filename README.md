@@ -32,9 +32,8 @@ r_t = log(P_t) − log(P_{t−1})
 
 This transformation ensures approximate stationarity and allows interpretation in percentage terms.
 
----
 
-## 3. Methodology
+# 3. Methodology
 
 ### 3.1 Volatility Modelling
 
@@ -49,7 +48,6 @@ where:
 
 The model assumes normally distributed innovations.
 
----
 
 ### 3.2 Value-at-Risk Estimation
 
@@ -68,7 +66,6 @@ where:
 * σ_t is conditional volatility from the GARCH model
 * z_{0.05} is the 5% quantile of the standard normal distribution
 
----
 
 ## 4. Empirical Results
 
@@ -79,7 +76,6 @@ where:
 
 These results indicate that, with 95% confidence, the portfolio is expected to lose more than approximately 3% on the worst trading days.
 
----
 
 ### 4.2 Volatility Persistence
 
@@ -94,15 +90,12 @@ Total persistence:
 
 This indicates **high volatility persistence**, meaning shocks have long-lasting effects but eventually decay, consistent with financial theory.
 
----
 
 ### 4.3 Volatility Dynamics
 
 The conditional volatility series exhibits clear **volatility clustering**, where periods of high volatility are followed by further high volatility.
 
 The most significant volatility spike occurs around 2020, corresponding to the COVID-19 market disruption. This reflects heightened uncertainty and increased market risk.
-
----
 
 ## 5. Visual Analysis
 
@@ -133,7 +126,6 @@ The GARCH framework successfully captures these dynamics, providing a more reali
 
 However, the assumption of normally distributed errors may be restrictive, as financial returns often exhibit heavy tails. This may lead to underestimation of extreme risk.
 
----
 
 ## 7. Limitations and Extensions
 
@@ -149,7 +141,6 @@ Potential improvements include:
 * Implementing VaR backtesting (Kupiec test)
 * Extending to multivariate GARCH models
 
----
 
 ## 8. Conclusion
 
@@ -157,7 +148,6 @@ This study demonstrates that GARCH-based models provide an effective framework f
 
 The estimated VaR indicates that the portfolio is exposed to approximately 3% daily downside risk at the 95% confidence level, with risk increasing substantially during periods of market stress.
 
----
 
 ## Tools Used
 
