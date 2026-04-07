@@ -10,9 +10,9 @@ This study investigates the volatility dynamics and downside risk of a semicondu
 This project applies a GARCH-based modelling framework to estimate conditional volatility and Value-at-Risk (VaR) for a semiconductor portfolio. The objective is to assess how risk evolves over time and evaluate the adequacy of volatility modelling in capturing market dynamics.
 
 
-## 2. Data and Preprocessing
+##  Data and Preprocessing
 
-### 2.1 Data Source
+### Data Source
 
 Daily adjusted closing prices were obtained from Yahoo Finance using the `quantmod` package in R.
 
@@ -22,18 +22,10 @@ The portfolio consists of:
 * Taiwan Semiconductor Manufacturing Company (TSM)
 * Broadcom Inc. (AVGO)
 
-### 2.2 Return Construction
 
-Logarithmic returns were computed as:
+# Methodology
 
-r_t = log(P_t) − log(P_{t−1})
-
-This transformation ensures approximate stationarity and allows interpretation in percentage terms.
-
-
-# 3. Methodology
-
-### 3.1 Volatility Modelling
+###Volatility Modelling
 
 To capture time-varying volatility, a standard GARCH(1,1) model is estimated:
 
@@ -47,7 +39,7 @@ where:
 The model assumes normally distributed innovations.
 
 
-### 3.2 Value-at-Risk Estimation
+###Value-at-Risk Estimation
 
 Two VaR measures are computed:
 
@@ -65,9 +57,9 @@ where:
 * z_{0.05} is the 5% quantile of the standard normal distribution
 
 
-## 4. Empirical Results
+##Empirical Results
 
-### 4.1 Value-at-Risk Estimates
+###Value-at-Risk Estimates
 
 * **Historical VaR (95%) ≈ −3.00%**
 * **Parametric VaR (95%) ≈ −3.18%**
@@ -75,7 +67,7 @@ where:
 These results indicate that, with 95% confidence, the portfolio is expected to lose more than approximately 3% on the worst trading days.
 
 
-### 4.2 Volatility Persistence
+###Volatility Persistence
 
 The estimated GARCH parameters imply:
 
@@ -89,29 +81,29 @@ Total persistence:
 This indicates **high volatility persistence**, meaning shocks have long-lasting effects but eventually decay, consistent with financial theory.
 
 
-### 4.3 Volatility Dynamics
+### Volatility Dynamics
 
 The conditional volatility series exhibits clear **volatility clustering**, where periods of high volatility are followed by further high volatility.
 
 The most significant volatility spike occurs around 2020, corresponding to the COVID-19 market disruption. This reflects heightened uncertainty and increased market risk.
 
-## 5. Visual Analysis
+## Visual Analysis
 
-### 5.1 Portfolio Returns
+### Portfolio Returns
 ![Portfolio Returns](images/portfolio_returns.png)
 
 The return series fluctuates around zero, with occasional extreme movements, reflecting market shocks.
 
-### 5.2 Conditional Volatility
+### Conditional Volatility
 ![Portfolio Volatility](images/portfolio_volatility.png)
 
 The GARCH model captures time-varying volatility effectively, with clear spikes during periods of market stress.
 
-### 5.3 GARCH-Based Value-at-Risk
+### GARCH-Based Value-at-Risk
 ![Portfolio VaR](images/portfolio_var_garch.png)
 
 VaR estimates increase during high-volatility periods, indicating elevated downside risk.
-## 6. Discussion
+## Discussion
 
 The results confirm several well-documented stylised facts of financial returns:
 
@@ -125,7 +117,7 @@ The GARCH framework successfully captures these dynamics, providing a more reali
 However, the assumption of normally distributed errors may be restrictive, as financial returns often exhibit heavy tails. This may lead to underestimation of extreme risk.
 
 
-## 7. Limitations and Extensions
+## Limitations and Extensions
 
 Several limitations are identified:
 
@@ -140,16 +132,10 @@ Potential improvements include:
 * Extending to multivariate GARCH models
 
 
-## 8. Conclusion
+## Conclusion
 
 This study demonstrates that GARCH-based models provide an effective framework for modelling financial volatility and estimating Value-at-Risk. The empirical results highlight the presence of volatility clustering and persistence in semiconductor equity returns.
 
 The estimated VaR indicates that the portfolio is exposed to approximately 3% daily downside risk at the 95% confidence level, with risk increasing substantially during periods of market stress.
 
-
-## Tools Used
-
-* R
-* quantmod
-* rugarch
 
