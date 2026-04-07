@@ -97,21 +97,8 @@ The return series exhibits clear volatility clustering, with periods of low vari
 ### Conditional Volatility
 ![Portfolio Volatility](images/portfolio_volatility.png)
 
-The estimated conditional volatility series displays pronounced clustering, confirming the effectiveness of the GARCH(1,1) model in capturing time-varying risk. The persistence of volatility is high, with 
-𝛼
-+
-𝛽
-=
-0.97
-α+β=0.97, indicating that shocks to volatility decay slowly over time. Furthermore, the dominance of the GARCH term (
-𝛽
-=
-0.912
-β=0.912) over the ARCH term (
-𝛼
-=
-0.059
-α=0.059) suggests that volatility is driven more by its own past values than by new shocks. The sharp spike in volatility during 2020, followed by gradual mean reversion, reflects the model’s ability to capture both sudden market stress and persistent risk dynamics.
+The estimated conditional volatility series displays pronounced clustering, confirming the effectiveness of the GARCH(1,1) model in capturing time-varying risk. The persistence of volatility is high, with alpha + beta = 0.97, indicating that shocks to volatility decay slowly over time. Furthermore, the dominance of the GARCH term (beta = 0.912) over the ARCH term (alpha = 0.059) suggests that volatility is driven more by its own past values than by new shocks. The sharp spike in volatility during 2020, followed by gradual mean reversion, reflects the model’s ability to capture both sudden market stress and persistent risk dynamics.
+
 
 ### GARCH-Based Value-at-Risk
 ![Portfolio VaR](images/portfolio_var_garch.png)
