@@ -92,17 +92,32 @@ The most significant volatility spike occurs around 2020, corresponding to the C
 ### Portfolio Returns
 ![Portfolio Returns](images/portfolio_returns.png)
 
-The return series fluctuates around zero, with occasional extreme movements, reflecting market shocks.
+The return series exhibits clear volatility clustering, with periods of low variability followed by clusters of large movements. This indicates the presence of conditional heteroskedasticity, violating the assumption of constant variance in classical models. Additionally, the presence of extreme returns suggests heavy tails, implying that large shocks occur more frequently than predicted by a normal distribution. Notably, a significant spike around 2020 reflects the impact of the COVID-19 market shock, indicating potential structural breaks in the volatility process.
 
 ### Conditional Volatility
 ![Portfolio Volatility](images/portfolio_volatility.png)
 
-The GARCH model captures time-varying volatility effectively, with clear spikes during periods of market stress.
+The estimated conditional volatility series displays pronounced clustering, confirming the effectiveness of the GARCH(1,1) model in capturing time-varying risk. The persistence of volatility is high, with 
+𝛼
++
+𝛽
+=
+0.97
+α+β=0.97, indicating that shocks to volatility decay slowly over time. Furthermore, the dominance of the GARCH term (
+𝛽
+=
+0.912
+β=0.912) over the ARCH term (
+𝛼
+=
+0.059
+α=0.059) suggests that volatility is driven more by its own past values than by new shocks. The sharp spike in volatility during 2020, followed by gradual mean reversion, reflects the model’s ability to capture both sudden market stress and persistent risk dynamics.
 
 ### GARCH-Based Value-at-Risk
 ![Portfolio VaR](images/portfolio_var_garch.png)
 
-VaR estimates increase during high-volatility periods, indicating elevated downside risk.
+The Value-at-Risk estimates vary dynamically over time, reflecting changes in conditional volatility. Periods of elevated volatility correspond to increased VaR, indicating higher potential losses. This demonstrates the advantage of GARCH-based VaR over static risk measures, as it adapts to evolving market conditions. However, since VaR is directly driven by conditional volatility, it inherits its persistence and tends to react with a lag following sudden shocks. While the estimated 95% VaR suggests potential losses of approximately 3% on extreme trading days, proper validation through backtesting (e.g., exceedance frequency tests) is required to assess its accuracy.
+
 ## Discussion
 
 The results confirm several well-documented stylised facts of financial returns:
